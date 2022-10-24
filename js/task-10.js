@@ -1,3 +1,6 @@
+/**
+ * Решение задачи №10
+ */
 const render = document.querySelector("[data-create]");
 const destroy = document.querySelector("[data-destroy]");
 const boxes = document.getElementById("boxes");
