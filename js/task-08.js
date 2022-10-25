@@ -8,11 +8,18 @@ form.addEventListener("submit", onLogin);
 
 function onLogin(evt) {
   evt.preventDefault();
-  const { email, password } = evt.currentTarget.elements;
+  const formElements = evt.currentTarget.elements;
+  const email = formElements.email.value;
+  const password = formElements.password.value;
 
-  if (email.value === "" || password.value === "") {
+  if (email === "" || password === "") {
     return alert("Все поля должны быть заполненны!");
   }
-  console.log(`Login: ${email.value}, Password: ${password.value}`);
+
+  const formData = {
+    email,
+    password,
+  };
+  console.log(formData);
   evt.currentTarget.reset();
 }
