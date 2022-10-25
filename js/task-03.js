@@ -17,24 +17,21 @@ const images = [
  * Решение задачи №3
  */
 
-const galleryContainerEl = document.querySelector("ul.gallery");
+const galleryContainerEl = document.querySelector(".gallery");
 
-function createGallery(images) {
-  return images
-    .map((image) => {
-      return `<li class="list__gallery"><img src=${image.url} alt=${image.alt}\><li\> `;
-    })
-    .join("");
-}
+const markup = images
+  .map(({ url, alt }) => {
+    return `<li class="list__gallery"><img src='${url}' alt='${alt}'></li> `;
+  })
+  .join("");
 
-galleryContainerEl.insertAdjacentHTML("afterbegin", createGallery(images));
+galleryContainerEl.insertAdjacentHTML("beforeend", markup);
 
 /**
  * Альтернативное решение задачи №3
  */
 
 // const galleryContainerEl = document.querySelector("ul.gallery");
-// console.log(galleryContainerEl);
 
 // function createGallery(images) {
 //   return images.map((image) => {
